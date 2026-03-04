@@ -1,0 +1,40 @@
+/* ============================================
+   PORTFOLIO TRACKER — Viewport & Slides
+   css/viewport.css
+   ============================================ */
+
+/* ── Viewport ── */
+#viewport {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  z-index: var(--z-slide);
+}
+
+/* ── Slide ── */
+.slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(100vw);
+  transition:
+    transform var(--dur-panel) var(--ease),
+    opacity   var(--dur-panel) var(--ease);
+  will-change: transform, opacity;
+  overflow: hidden;
+}
+
+.slide.active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(0);
+}
+
+/* ── iframe fill ── */
+.slide iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}

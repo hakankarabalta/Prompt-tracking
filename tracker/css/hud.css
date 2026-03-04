@@ -1,0 +1,96 @@
+/* ============================================
+   PORTFOLIO TRACKER — HUD (Buttons & Dots)
+   css/hud.css
+   ============================================ */
+
+/* ── Glass Button Base ── */
+.g-btn {
+  position: fixed;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--glass-bg);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: auto;
+  transition:
+    background      var(--dur-base),
+    border-color    var(--dur-base),
+    transform       var(--dur-fast);
+  z-index: var(--z-hud);
+}
+.g-btn:hover  { background: var(--glass-hover); border-color: var(--border-hi); }
+.g-btn:active { transform: scale(0.9); }
+.g-btn.disabled { opacity: 0.18; pointer-events: none; }
+
+/* ── Info Button ── */
+#btn-info {
+  left: 22px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: var(--z-btn-info);
+}
+#btn-info:active { transform: translateY(-50%) scale(0.9); }
+
+/* Icon swap animation */
+.icon-wrap { position: relative; width: 20px; height: 20px; }
+.icon-wrap svg {
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+  transition: opacity var(--dur-base), transform var(--dur-panel) var(--ease);
+}
+#btn-info .ic-info  { opacity: 0.65; transform: scale(1) rotate(0deg); }
+#btn-info .ic-close { opacity: 0;    transform: scale(0.5) rotate(-90deg); }
+
+body.panel-open #btn-info .ic-info  { opacity: 0;    transform: scale(0.5) rotate(90deg); }
+body.panel-open #btn-info .ic-close { opacity: 0.85; transform: scale(1) rotate(0deg); }
+
+/* ── Nav Arrows (desktop only) ── */
+#btn-prev { right: 22px; top: calc(50% - 30px); }
+#btn-next { right: 22px; top: calc(50% + 30px); }
+#btn-prev svg,
+#btn-next svg { width: 17px; height: 17px; opacity: 0.65; }
+
+/* ── Progress Dots ── */
+#dots {
+  position: fixed;
+  bottom: 26px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 9px;
+  pointer-events: auto;
+  z-index: var(--z-hud);
+}
+.dot {
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.22);
+  cursor: pointer;
+  transition: background var(--dur-base), transform var(--dur-base);
+}
+.dot.active {
+  background: rgba(255, 255, 255, 0.85);
+  transform: scale(1.5);
+}
+
+/* ── Mobile overrides ── */
+@media (max-width: 768px) {
+  #btn-prev, #btn-next { display: none; }
+
+  #btn-info {
+    left: 16px;
+    top: 20px;
+    transform: none;
+    width: 42px;
+    height: 42px;
+  }
+  #btn-info:active { transform: scale(0.9); }
+
+  #dots { bottom: 18px; }
+}

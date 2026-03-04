@@ -1,0 +1,66 @@
+/* ============================================
+   AURORA LANDING — Design Tokens
+   css/tokens.css
+   ============================================ */
+
+:root {
+  /* Background */
+  --color-bg:         #030308;
+  --color-surface:    rgba(255, 255, 255, 0.025);
+  --color-surface-2:  rgba(255, 255, 255, 0.05);
+  --color-border:     rgba(255, 255, 255, 0.07);
+  --color-border-hi:  rgba(255, 255, 255, 0.15);
+
+  /* Text */
+  --color-text:       #e8e8f8;
+  --color-text-muted: rgba(232, 232, 248, 0.45);
+  --color-text-dim:   rgba(232, 232, 248, 0.28);
+
+  /* Brand Colors */
+  --color-primary:        rgba(120, 120, 220, 0.92);
+  --color-primary-hi:     rgba(140, 140, 240, 1);
+  --color-primary-glow:   rgba(120, 120, 220, 0.3);
+
+  --color-green:  #78dc9f;
+  --color-purple: #c060e0;
+  --color-teal:   #60c0a0;
+
+  /* Blob colors */
+  --blob-1: #6060e0;
+  --blob-2: #60c0a0;
+  --blob-3: #c060e0;
+
+  /* Spacing */
+  --space-xs:  4px;
+  --space-sm:  8px;
+  --space-md:  16px;
+  --space-lg:  24px;
+  --space-xl:  40px;
+  --space-2xl: 80px;
+
+  /* Radius */
+  --radius-sm:  8px;
+  --radius-md:  12px;
+  --radius-lg:  18px;
+  --radius-xl:  24px;
+  --radius-full: 9999px;
+
+  /* Typography */
+  --font-display: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+  --font-body:    -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif;
+
+  --text-xs:   11px;
+  --text-sm:   13px;
+  --text-base: 15px;
+  --text-lg:   18px;
+
+  /* Animations */
+  --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-fast:  0.18s;
+  --dur-base:  0.28s;
+  --dur-slow:  0.5s;
+
+  /* Max widths */
+  --max-w-section: 960px;
+  --max-w-text:    560px;
+}

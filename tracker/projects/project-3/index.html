@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DEV.XYZ — Full-Stack Developer & Designer</title>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+<!-- Custom Cursor -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursor-ring"></div>
+
+<div class="page">
+
+  <!-- ── Navbar ── -->
+  <nav class="navbar">
+    <div class="navbar__logo">DEV.XYZ</div>
+    <div class="navbar__links" id="nav-links">
+      <!-- injected by app.js -->
+    </div>
+  </nav>
+
+  <!-- ── Hero ── -->
+  <section class="hero" id="hero">
+    <div class="hero__eyebrow">
+      <span class="eyebrow">// Full-Stack Developer & Designer</span>
+    </div>
+
+    <h1 class="hero__headline">
+      Creating<br>
+      <span class="neon-text">Digital</span><br>
+      Realities.
+    </h1>
+
+    <p class="hero__desc">
+      I build immersive web experiences at the intersection of design
+      and technology. Obsessed with pixel-perfect details and interactions
+      that feel impossibly smooth.
+    </p>
+
+    <button class="btn-neon">View Work →</button>
+  </section>
+
+  <!-- ── Projects ── -->
+  <section class="section" id="projects">
+    <div class="section__label">// Selected Projects</div>
+    <div class="project-grid" id="project-grid">
+      <!-- injected by app.js -->
+    </div>
+  </section>
+
+  <!-- ── About ── -->
+  <section class="about" id="about">
+    <div>
+      <div class="section__label">// About Me</div>
+      <h2 style="font-size:clamp(28px,5vw,52px);font-weight:900;letter-spacing:-2px;font-family:var(--font-display);line-height:1;margin-bottom:24px">
+        Crafting the<br><span class="neon-text">future</span><br>of the web.
+      </h2>
+      <p style="font-size:14px;color:var(--color-text-muted);line-height:1.75;max-width:380px;font-family:var(--font-body)">
+        5+ years building production applications across startups and scale-ups.
+        I specialize in creating rich, performant frontends paired with solid,
+        scalable backends. Based in Istanbul, working globally.
+      </p>
+    </div>
+    <div id="skills-list">
+      <!-- injected by app.js -->
+    </div>
+  </section>
+
+  <!-- ── Contact ── -->
+  <section class="contact" id="contact">
+    <div class="section__label">// Get In Touch</div>
+    <h2 style="font-size:clamp(26px,4vw,42px);font-weight:900;letter-spacing:-1.5px;font-family:var(--font-display);margin-bottom:32px">
+      Let's build<br><span class="neon-text">something</span> great.
+    </h2>
+
+    <div class="form-group">
+      <label class="form-label">Name</label>
+      <input class="form-input" type="text" placeholder="Your name">
+    </div>
+    <div class="form-group">
+      <label class="form-label">Email</label>
+      <input class="form-input" type="email" placeholder="your@email.com">
+    </div>
+    <div class="form-group">
+      <label class="form-label">Message</label>
+      <textarea class="form-textarea" placeholder="Tell me about your project..."></textarea>
+    </div>
+    <button class="btn-neon" style="width:100%;justify-content:center">
+      Send Message →
+    </button>
+  </section>
+
+  <!-- ── Footer ── */
+  <footer class="footer">
+    <span>© 2026 DEV.XYZ</span>
+    <span style="color:var(--neon-mid)">Built with obsession.</span>
+  </footer>
+
+</div>
+
+<!-- Scripts -->
+<script src="js/data.js"></script>
+<script src="js/Cursor.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>

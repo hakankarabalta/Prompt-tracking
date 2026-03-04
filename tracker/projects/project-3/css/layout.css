@@ -1,0 +1,117 @@
+/* ============================================
+   NEON PORTFOLIO — Layout
+   css/layout.css
+   ============================================ */
+
+/* ── Page ── */
+.page { overflow-x: hidden; }
+
+/* ── Navbar ── */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(2, 2, 6, 0.88);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border-bottom: 1px solid var(--color-border);
+  padding: 16px var(--space-xl);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar__logo {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--neon);
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font-family: var(--font-mono);
+}
+
+.navbar__links {
+  display: flex;
+  gap: var(--space-xl);
+}
+
+/* ── Hero ── */
+.hero {
+  min-height: 92vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--space-3xl) var(--space-xl);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background grid */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--grid-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+  background-size: var(--grid-size) var(--grid-size);
+  pointer-events: none;
+}
+
+/* ── Section ── */
+.section {
+  padding: var(--space-3xl) var(--space-xl);
+}
+
+.section__label {
+  font-size: var(--text-xs);
+  letter-spacing: 4px;
+  color: var(--neon-mid);
+  text-transform: uppercase;
+  margin-bottom: var(--space-xl);
+}
+
+/* ── Project Grid ── */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-md);
+  max-width: 860px;
+}
+
+/* ── About ── */
+.about {
+  padding: var(--space-3xl) var(--space-xl);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2xl);
+  align-items: center;
+  max-width: 900px;
+}
+
+/* ── Contact ── */
+.contact {
+  padding: var(--space-3xl) var(--space-xl);
+  max-width: 500px;
+}
+
+/* ── Footer ── */
+.footer {
+  padding: var(--space-xl);
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--text-sm);
+  color: var(--color-text-dim);
+}
+
+/* ── Responsive ── */
+@media (max-width: 680px) {
+  .navbar { padding: 14px var(--space-lg); }
+  .navbar__links { display: none; }
+  .hero { padding: var(--space-2xl) var(--space-lg); }
+  .project-grid { grid-template-columns: 1fr; }
+  .about { grid-template-columns: 1fr; }
+  .section { padding: var(--space-2xl) var(--space-lg); }
+}

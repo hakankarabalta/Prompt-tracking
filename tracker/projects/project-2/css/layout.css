@@ -1,0 +1,113 @@
+/* ============================================
+   AURORA LANDING — Layout
+   css/layout.css
+   ============================================ */
+
+/* ── Page ── */
+.page { overflow-x: hidden; }
+
+/* ── Navbar ── */
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 18px var(--space-xl);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(3, 3, 8, 0.75);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  transition: background var(--dur-slow);
+}
+
+.navbar__logo {
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  font-family: var(--font-display);
+}
+
+.navbar__logo span {
+  color: var(--color-primary-hi);
+}
+
+.navbar__links {
+  display: flex;
+  gap: var(--space-xl);
+  align-items: center;
+}
+
+.navbar__link {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  transition: color var(--dur-base);
+  cursor: pointer;
+}
+.navbar__link:hover { color: var(--color-text); }
+
+.navbar__cta {
+  margin-left: var(--space-md);
+}
+
+/* ── Hero Section ── */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 120px var(--space-lg) var(--space-2xl);
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── Section ── */
+.section {
+  padding: var(--space-2xl) var(--space-lg);
+}
+
+.section__title {
+  font-size: clamp(26px, 4vw, 40px);
+  font-weight: 800;
+  letter-spacing: -1px;
+  text-align: center;
+  margin-bottom: var(--space-2xl);
+  font-family: var(--font-display);
+}
+
+/* ── Feature Grid ── */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+  max-width: var(--max-w-section);
+  margin: 0 auto;
+}
+
+/* ── Pricing Grid ── */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+  max-width: var(--max-w-section);
+  margin: 0 auto;
+}
+
+/* ── Footer ── */
+.footer {
+  text-align: center;
+  padding: var(--space-2xl) var(--space-lg);
+  font-size: var(--text-sm);
+  color: var(--color-text-dim);
+  border-top: 1px solid var(--color-border);
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .navbar__links { display: none; }
+  .feature-grid  { grid-template-columns: 1fr; }
+  .pricing-grid  { grid-template-columns: 1fr; }
+}

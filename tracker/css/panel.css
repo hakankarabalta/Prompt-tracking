@@ -1,0 +1,131 @@
+/* ============================================
+   PORTFOLIO TRACKER — Info Panel
+   css/panel.css
+   ============================================ */
+
+/* ── Panel ── */
+#info-panel {
+  position: fixed;
+  left: 0; top: 0;
+  height: 100%;
+  width: var(--panel-w);
+  background: var(--panel-bg);
+  backdrop-filter: blur(48px) saturate(220%);
+  -webkit-backdrop-filter: blur(48px) saturate(220%);
+  border-right: 1px solid var(--border);
+  transform: translateX(-100%);
+  transition: transform var(--dur-panel) var(--ease);
+  z-index: var(--z-panel);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+body.panel-open #info-panel { transform: translateX(0); }
+
+/* ── Accent bar ── */
+.panel-accent {
+  height: 3px;
+  background: linear-gradient(90deg, var(--proj-color, #7878c8), transparent);
+  transition: background 0.5s;
+  flex-shrink: 0;
+}
+
+/* ── Body ── */
+.panel-body {
+  padding: 68px 30px 40px;
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Scrollbar */
+.panel-body::-webkit-scrollbar { width: 3px; }
+.panel-body::-webkit-scrollbar-thumb {
+  background: var(--border-hi);
+  border-radius: 3px;
+}
+
+/* ── Typography ── */
+.panel-eyebrow {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+.panel-name {
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.8px;
+  line-height: 1.15;
+  color: var(--text);
+  margin-bottom: 28px;
+}
+.panel-sep {
+  width: 36px;
+  height: 1px;
+  background: var(--border-hi);
+  margin-bottom: 24px;
+}
+.panel-prompt-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+.panel-prompt {
+  font-size: 13px;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.5);
+  font-style: italic;
+}
+
+/* ── Footer ── */
+.panel-footer {
+  margin-top: auto;
+  padding-top: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11px;
+  color: var(--muted);
+}
+.panel-counter {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.panel-path {
+  font-size: 10px;
+  opacity: 0.35;
+}
+
+/* ── Backdrop (mobile) ── */
+#backdrop {
+  position: fixed;
+  inset: 0;
+  background: var(--backdrop-bg);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s;
+  z-index: var(--z-backdrop);
+  display: none;
+}
+
+/* ── Mobile overrides ── */
+@media (max-width: 768px) {
+  #info-panel {
+    width: 100%;
+    border-right: none;
+  }
+  .panel-body { padding: 72px 28px 60px; }
+
+  #backdrop { display: block; }
+  body.panel-open #backdrop { opacity: 1; pointer-events: auto; }
+}
